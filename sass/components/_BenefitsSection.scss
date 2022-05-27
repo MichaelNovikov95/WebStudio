@@ -1,0 +1,131 @@
+@media screen and (max-width: 480px),(min-width:480px) {
+  
+  .section-example {
+    display:none;
+  }
+
+  .section-benefits__container {
+    margin:-15px;
+  }
+
+  .section-benefits__icon-box {
+    display: flex;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+  
+    background: getColor('third-bg-color');
+    border-radius: 4px;
+  }
+
+  .section-benefits__icon {
+    margin:25px auto;
+  }
+
+  .section-benefits__item {
+    max-width:450px;
+    margin:0 auto;
+    text-align: left;
+  }
+
+  .section-benefits__title {
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.143;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-align-last: left;
+  }
+
+  .section-benefits__text {
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: getColor('secondary-text-color');
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  .section-benefits__list {
+    display:flex;
+    flex-wrap:wrap;
+    max-width:1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-benefits__item {
+    width:calc((100% - 60px)/2);
+    margin:15px;
+    max-width:354px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  
+  .section-benefits__container {
+    margin: 0 auto;
+  }
+
+  .section-benefits {
+  padding-bottom: 0;
+
+  &__list {
+    display: flex;
+    margin-left: auto;
+    max-width:100%
+  }
+
+  &__item {
+    width:calc((100%-120px)/4);
+    max-width: 270px;
+  }
+
+  &__icon-box {
+    display: flex;
+    width: 270px;
+    height: 120px;
+  }
+}
+
+  .section-example {
+    display: block;
+  }
+  
+  .section-example__list {
+      display:flex;
+      justify-content: space-between;
+      max-width: 1200px;
+    }
+
+    .section-example__item {
+      width:calc((100% - 90px)/3);
+      overflow:hidden;
+    }
+    
+    .section-example__image-box {
+      position:relative;
+    }
+    
+    .section-example__text-box {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 70px;
+      align-items: center;
+      justify-content: center;
+    
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      color: getColor('white-bg-color');
+      background-color: #2f303acc;
+    }
+}
