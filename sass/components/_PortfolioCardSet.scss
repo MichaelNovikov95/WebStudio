@@ -1,13 +1,6 @@
-
-// .card-container__list {
-//   display:flex;
-//   flex-wrap:wrap;
-// }
-
 .card-container__item {
-  width: 370px;
-  justify-content: space-between;
-  margin-right: 30px;
+  width: 100%;
+  max-width:450px;
   margin-bottom: 30px;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -17,11 +10,32 @@
                 0px 4px 4px #0000000f, 
                 1px 4px 6px #00000029;
   }
+
+  @media screen and (min-width:768px) {
+    width:calc((100% - 60px)/2);
+    margin:15px;
+  }
+
+  @media screen and (min-width:1200px) {
+      width:calc((100% - 90px)/3);
+  }
+}
+
+.card-container__image {
+  width:100%;
+  @media screen and (min-width:768px) {
+    height:100%;
+  }
 }
 
 .card-container__image-box {
   position: relative;
   overflow: hidden;
+  height:100%;
+
+  @media screen and (min-width:768px) {
+    height:294px;
+  }
 }
 
 .card-container__text-box {
@@ -31,13 +45,23 @@
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 63px 24px;
+  padding: 77px 24px;
   background-color: #2196f3e6;
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   .card-container__item:hover & {
     transform: translateY(0);
+  }
+
+  @media screen and (min-width:768px) {
+    padding-top:49px;
+    padding-bottom: 77px;
+  }
+
+  @media screen and (min-width:1200px) {
+    padding-top: 63px;
+    padding-bottom: 63px;
   }
 }
 
@@ -70,49 +94,17 @@
   color: getColor('secondary-text-color');
 }
 
-@media screen and (max-width:480px),(max-width:767px) {
-  .card-container__item {
-    width: 100%;
-    max-width:450px;
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }  
-
-  .card-container__image {
-    width:100%;
-    // height:294px;
-  }
-}
-
 @media screen and (min-width:768px) {
-  
-  .card-container {
-    padding: 0;
-  }
 
   .card-container__list{
     display: flex;
     flex-wrap:wrap;
+    margin:-15px;
   }
-
-  .card-container__item {
-    width:calc((100% - 60px)/2);
-  }
-
-  .card-container__image {
-    width:100%;
-}
 }
 
-@media screen and (min-width:1200px) {
-  
-  .card-container__item {
-    width:calc((100% - 90px)/3);
-  }
-
-  .card-container__item:nth-child(3n) {
-    margin-right: 0;
+@media screen and (min-width:768px) and (max-width:1199px) {
+  .technokryak-box {
+padding-bottom: 58px;
   }
 }

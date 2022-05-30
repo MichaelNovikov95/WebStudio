@@ -15,16 +15,54 @@
 
   .head__list {
     display:none;
+
+    @media screen and (min-width:768px) {
+      &--nav {
+        display: flex;
+      }
+
+      &--contact {
+        display:block;
+        margin-left: auto;
+        padding-top: 21px;
+        padding-right: 15px;
+
+        @media screen and (min-width:1200px) {
+          display:flex;
+          margin: 0;
+          padding: 0;
+          margin-left: auto;
+        }
+      }
+    }
   }
 
   .head__nav {
     padding-top: 16px;
     padding-bottom: 16px;
-    padding-left: 15px;
+
+    @media screen and (min-width:768px) {
+      display:flex;
+      align-items: center;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    @media screen and (min-width:1200px) {
+      padding: 0;
+    }
   }
 
   .head__logo {
     margin-right:auto;
+
+    @media screen and (min-width:768px) {
+      margin-right: 88px;
+    }
+
+    @media screen and (min-width:1200px) {
+      margin-right: 94px;
+    }
 
     color: getColor('primary-text-color');
 
@@ -170,29 +208,7 @@
   }
 
   .head__container {
-  display: flex;
-}
-
-.head__nav {
-  display:flex;
-  align-items: center;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.head__logo {
-  margin-right: 88px;
-}
-
-.head__list--nav{
-  display: flex;
-}
-
-.head__list--contact {
-  display:block;
-  margin-left: auto;
-  padding-top: 21px;
-  padding-right: 15px;
+    display: flex;
 }
 
 .head__list--nav .head__item {
@@ -208,15 +224,25 @@ margin-right: 50px;
   line-height: 1.167;
   letter-spacing: 0.02em;
 
+  @media screen and (min-width:1200px) {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+  }
+
   color: getColor('secondary-text-color');
 }
 
 .head__item--contact + .head__item--contact {
-margin-top: 10px;
+  margin-top: 10px;
+
+  @media screen and (min-width:1200px) {
+    margin-top: 0;
+  }
 }
 
 .head__item--current {
-position:relative;
+  position:relative;
 
   &::after {
     position:absolute;
@@ -263,25 +289,6 @@ position:relative;
 
 @media screen and (min-width:1200px) {
   
-  .head__list--contact{
-    display:flex;
-    margin: 0;
-    padding: 0;
-    margin-left: auto;
-  }
-
-  .head__item--contact+.head__item--contact {
-    margin-top: 0;
-  }
-
-  .head__nav {
-    padding: 0;
-  }
-  
-  .head__logo {
-    margin-right: 94px;
-  }
-  
   .head__item--contact {
     padding: 32px 0;
 
@@ -293,10 +300,4 @@ position:relative;
       margin-right: 0;
   }
   }
-
-  .head__link--contact {
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.03em;
-}
 }
