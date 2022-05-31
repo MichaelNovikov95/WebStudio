@@ -1,7 +1,6 @@
 @media screen and (max-width: 480px), (min-width:480px), (max-width:1199px) {
   
   .head {
-    position:relative;
     background-color: getColor('white-bg-color');
   
     &::after {
@@ -11,6 +10,11 @@
       width:100%;
       outline: 1px solid getColor('header-border-color');
     }
+  }
+
+  .head__container {
+    position:relative;
+    display:flex;
   }
 
   .head__list {
@@ -108,14 +112,18 @@
   }
 
   .menu-modal-window {
-    position:absolute;
-    display:block;
+    position:fixed;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
     top:0;
     left:0;
-    width:100%;
+    width:100vw;
     height:100vh;
     z-index:100;
     padding: 48px 40px;
+
+    overflow-y: scroll;
     
     background-color:getColor('white-bg-color');
     
@@ -124,8 +132,8 @@
     }
   }
 
-  .menu__list {
-    margin-bottom: 250px;
+  .up-menu {
+    margin-bottom: 32px;
   }
 
   .menu__item + .menu__item {
@@ -135,7 +143,7 @@
   .menu__link {
     font-family: 'Roboto';
     font-weight: 500;
-    font-size: 40px;
+    font-size: 32px;
     line-height: 1.175;
     text-align: center;
     letter-spacing: 0.02em;
@@ -154,14 +162,14 @@
   .menu-contact__link {
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 16px;
     line-height: 1.167;
     letter-spacing: 0.02em;
 
     color: getColor('secondary-text-color');
 
       &.primary--link {
-        font-size: 34px;
+        font-size: 21px;
         line-height: 1.176;
 
         color: getColor('accent-color');
@@ -193,7 +201,7 @@
 
   .menu-soc__link {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 11px;
     line-height: 1.22;
     letter-spacing: 0.02em;
 

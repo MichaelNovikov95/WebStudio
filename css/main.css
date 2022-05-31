@@ -590,7 +590,6 @@ h1, h2, h3, h4, h5, h6, ul, p {
 
 @media screen and (max-width: 480px), (min-width: 480px), (max-width: 1199px) {
   .head {
-    position: relative;
     background-color: #FFF;
   }
   .head::after {
@@ -599,6 +598,10 @@ h1, h2, h3, h4, h5, h6, ul, p {
     display: block;
     width: 100%;
     outline: 1px solid #ECECEC;
+  }
+  .head__container {
+    position: relative;
+    display: flex;
   }
   .head__list {
     display: none;
@@ -700,21 +703,24 @@ h1, h2, h3, h4, h5, h6, ul, p {
     display: none;
   }
   .menu-modal-window {
-    position: absolute;
-    display: block;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     z-index: 100;
     padding: 48px 40px;
+    overflow-y: scroll;
     background-color: #FFF;
   }
   .menu-modal-window.is-open {
     display: none;
   }
-  .menu__list {
-    margin-bottom: 250px;
+  .up-menu {
+    margin-bottom: 32px;
   }
   .menu__item + .menu__item {
     margin-top: 32px;
@@ -722,7 +728,7 @@ h1, h2, h3, h4, h5, h6, ul, p {
   .menu__link {
     font-family: 'Roboto';
     font-weight: 500;
-    font-size: 40px;
+    font-size: 32px;
     line-height: 1.175;
     text-align: center;
     letter-spacing: 0.02em;
@@ -737,13 +743,13 @@ h1, h2, h3, h4, h5, h6, ul, p {
   .menu-contact__link {
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 16px;
     line-height: 1.167;
     letter-spacing: 0.02em;
     color: #757575;
   }
   .menu-contact__link.primary--link {
-    font-size: 34px;
+    font-size: 21px;
     line-height: 1.176;
     color: #2196F3;
   }
@@ -766,7 +772,7 @@ h1, h2, h3, h4, h5, h6, ul, p {
   }
   .menu-soc__link {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 11px;
     line-height: 1.22;
     letter-spacing: 0.02em;
     color: #2196F3;
@@ -864,26 +870,42 @@ h1, h2, h3, h4, h5, h6, ul, p {
   }
 }
 
-@media screen and (max-width: 480px), (min-width: 480px) {
+.section-hero {
+  padding-top: 118px;
+  padding-bottom: 118px;
+  text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media screen and (max-width: 767px) {
   .section-hero {
-    padding-top: 118px;
-    padding-bottom: 118px;
-    text-align: center;
-    background-image: linear-gradient(to right, #2f303a66, #2f303a66), url(../images/main-bgp.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-image: linear-gradient(to right, #2f303a66, #2f303a66), url(../../images/main-bgp-mob.jpg);
   }
 }
 
-@media screen and (max-width: 480px) and (min-device-pixel-ratio: 2), (min-width: 480px) and (min-device-pixel-ratio: 2), screen and (max-width: 480px) and (min-resolution: 192dpi), (min-width: 480px) and (min-resolution: 192dpi), screen and (max-width: 480px) and (min-resolution: 2dppx), (min-width: 480px) and (min-resolution: 2dppx) {
+@media screen and (max-width: 767px) and (min-device-pixel-ratio: 2), screen and (max-width: 767px) and (min-resolution: 192dpi), screen and (max-width: 767px) and (min-resolution: 2dppx) {
   .section-hero {
-    background-image: linear-gradient(to right, #2f303a66, #2f303a66), url(../../images/main-bgp@2x.jpg);
+    background-image: linear-gradient(to right, #2f303a66, #2f303a66), url(../../images/main-bgp-mob-2x.jpg);
   }
 }
 
-@media screen and (max-width: 480px) and (min-width: 1200px), screen and (min-width: 480px) and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .section-hero {
+    background-image: linear-gradient(to right, #2f303a66, #2f303a66), url(../../images/main-bgp-tab.jpg);
+  }
+}
+
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .section-hero {
+    background-image: linear-gradient(to right, #2f303a66, #2f303a66), url(../../images/main-bgp-tab-2x.jpg);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .section-hero {
+    background-image: linear-gradient(to right, #2f303a66, #2f303a66), url(../../images/main-bgp.jpg);
     display: flex;
     max-width: 1600px;
     height: 600px;
@@ -894,22 +916,26 @@ h1, h2, h3, h4, h5, h6, ul, p {
   }
 }
 
-@media screen and (max-width: 480px), (min-width: 480px) {
-  .section-hero__title {
-    max-width: 360px;
-    margin: 0 auto;
-    font-weight: 900;
-    font-size: 26px;
-    line-height: 1.62;
-    margin-bottom: 30px;
-    text-align: center;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #FFF;
+@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+  .section-hero {
+    background-image: linear-gradient(to right, #2f303a66, #2f303a66), url(../../images/main-bgp@2x.jpg);
   }
 }
 
-@media screen and (max-width: 480px) and (min-width: 1200px), screen and (min-width: 480px) and (min-width: 1200px) {
+.section-hero__title {
+  max-width: 360px;
+  margin: 0 auto;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1.62;
+  margin-bottom: 30px;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #FFF;
+}
+
+@media screen and (min-width: 1200px) {
   .section-hero__title {
     max-width: 700px;
     margin-left: auto;
@@ -1151,19 +1177,40 @@ h1, h2, h3, h4, h5, h6, ul, p {
   width: 100%;
   height: 100%;
   background-color: #00000033;
-  z-index: 50;
+  z-index: 200;
   opacity: 1;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (max-width: 767px) {
+  .backdrop {
+    overflow-y: scroll;
+  }
 }
 
 .backdrop__modal {
   display: flex;
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(1);
+  top: 50px;
+  max-width: 450px;
+  width: 90vw;
+  transform: translate(-50%, 0) scale(1);
   background-color: #FFF;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 485px) {
+  .backdrop__modal {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .backdrop__modal {
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
 .backdrop__button-pre {
@@ -1291,6 +1338,7 @@ h1, h2, h3, h4, h5, h6, ul, p {
   background-color: #2196F3;
   background-size: contain;
   background-origin: border-box;
+  background-repeat: no-repeat;
   fill: #FFF;
   border: none;
 }
@@ -1311,10 +1359,6 @@ h1, h2, h3, h4, h5, h6, ul, p {
 }
 
 @media screen and (max-width: 480px), (max-width: 1140px) {
-  .backdrop__modal {
-    max-width: 450px;
-    width: 100%;
-  }
   .backdrop__form-box {
     width: 100%;
   }
@@ -1417,10 +1461,22 @@ h1, h2, h3, h4, h5, h6, ul, p {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 77px 24px;
+  padding: 24px;
   background-color: #2196f3e6;
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 430px) {
+  .card-container__text-box {
+    padding-top: 50px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .card-container__text-box {
+    padding-top: 77px;
+  }
 }
 
 .card-container__item:hover .card-container__text-box {
@@ -1443,10 +1499,22 @@ h1, h2, h3, h4, h5, h6, ul, p {
 
 .card-container__text-hidden {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.56;
   letter-spacing: 0.03em;
   color: #FFF;
+}
+
+@media screen and (min-width: 350px) {
+  .card-container__text-hidden {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 440px) {
+  .card-container__text-hidden {
+    font-size: 18px;
+  }
 }
 
 .card-container__meta {
